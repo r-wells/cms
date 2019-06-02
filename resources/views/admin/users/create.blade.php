@@ -4,8 +4,8 @@
 @section('content')
 
     <h2>Create User</h2>
-
-    {!! Form::open(['method'=>'POST', 'action' => 'AdminUsersController@store', 'files'=>'true']) !!}
+ 
+    {!! Form::open(['method'=>'POST', 'action' => 'AdminUsersController@store', 'files'=>true]) !!}
 
     <div class="form-group">
         {!! Form::label('name', 'Name: ') !!}
