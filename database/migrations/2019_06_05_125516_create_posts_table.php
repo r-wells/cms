@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->integer('category_id');
             $table->integer('photo_id');
             $table->string('title');
-            $table->text('body');
+            $table->text('body'); 
             $table->timestamps();
         });
     }
@@ -32,4 +32,5 @@ class CreatePostsTable extends Migration
     {
         Schema::drop('posts');
     }
+
 }

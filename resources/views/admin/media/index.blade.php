@@ -5,29 +5,13 @@
 
 @section('content')
 
-    @if(Session::has('deleted_category'))
-        <p class="bg-danger">{{session('deleted_category')}}</p>
+    @if(Session::has('deleted_media'))
+        <p class="bg-danger">{{session('deleted_media')}}</p>
     @endif
 
-    <h2>Categories</h2>
+    <h2>Media</h2>
 
-    <div class="col-sm-6">
-        {!! Form::open(['method'=>'POST', 'action' => 'AdminCategoriesController@store']) !!}
-        <h3 style="font-weight: bold;">Create Category By Name</h3>
-        <div class="form-group">
-            {!! Form::label('name', 'Name: ') !!}
-            {!! Form::text('name', null, ['class' => 'form-control']) !!}
-        </div>
-
-        <div class="form-group">    
-            {!! Form::submit('Create Category', ['class' => 'btn btn-primary']) !!}
-        </div>
-
-        {!! Form::close() !!}
-    </div>
-
-    <div class="col-sm-6">
-        <h3 style="font-weight: bold;">Current Categories</h3>
+    <div class="row">
         <table class="table">
             <thead>
             <tr>
@@ -37,14 +21,19 @@
             </tr>
             </thead>
             <tbody>
-            @if($categories)
+            @if($photos)
             
-                @foreach($categories as $category)
+                @foreach($photos as $photo)
 
                     <tr>
-                        <td>{{$category->id}}</td>
-                        <td><a href="{{route('admin.categories.edit', $category->id)}}">{{$category->name}}</a></td>
-                        <td>{{$category->created_at ? $category->created_at->diffForHumans() : 'no date'}}</td>
+                        <td>{{$photo->id}}</td>
+                        <td><img height=50 src="{{$photo->file}}" alt=""></td>
+                        <td>{{$photo->created_at ? $photo->created_at->diffForHumans() : 'no date'}}</td>
+                        <td>
+                            {!! Form::open(['method' => 'DELETE', 'action' => ['MediaController@destroy', $photo->id]]) !!}
+                            {!! Form::submit('Delete Media', ['class'=>'btn btn-danger']) !!}
+                            {!! Form::close() !!}
+                        </td>
                     </tr>
 
                 @endforeach
