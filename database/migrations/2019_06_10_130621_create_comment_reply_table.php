@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommentRepliesTable extends Migration
+class CreateCommentReplyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,9 +18,10 @@ class CreateCommentRepliesTable extends Migration
             $table->integer('is_active')->default(0);
             $table->string('author');
             $table->string('email');
+            $table->string('photo');
             $table->text('body');
             $table->timestamps();
-            
+
             $table->foreign('comment_id')->references('id')->on('comments')->onDelete('cascade');
         });
     }

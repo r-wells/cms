@@ -70,9 +70,9 @@
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
+            <!--<div class="col-md-4">
 
-                <!-- Blog Search Well -->
+                <!-- Blog Search Well 
                 <div class="well">
                     <h4>Blog Search</h4>
                     <div class="input-group">
@@ -83,10 +83,11 @@
                         </button>
                         </span>
                     </div>
-                    <!-- /.input-group -->
+                    <!-- /.input-group 
                 </div>
 
-                <!-- Blog Categories Well -->
+                <!-- Blog Categories Well
+                
                 <div class="well">
                     <h4>Blog Categories</h4>
                     <div class="row">
@@ -115,16 +116,16 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- /.row -->
+                    <!-- /.row 
                 </div>
 
-                <!-- Side Widget Well -->
+                <!-- Side Widget Well
                 <div class="well">
                     <h4>Side Widget Well</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
                 </div>
 
-            </div>
+            </div> -->
 
         </div>
         <!-- /.row -->
@@ -146,6 +147,8 @@
 
     <!-- jQuery -->
     <script src="{{asset('js/libs.js')}}"></script>
+
+    @yield('scripts')
 
 </body>
 
